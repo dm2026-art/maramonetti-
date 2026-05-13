@@ -84,9 +84,11 @@ html, body {
 .gcol > .gc:last-child {
   flex: 1;
   border-bottom: none;
+  display: flex;
+  flex-direction: column;
 }
 .gcol > .gc:last-child .gc-inner {
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
