@@ -68,6 +68,8 @@ html, body {
 }
 .gcol {
   flex: 1;
+  display: flex;
+  flex-direction: column;
   border-right: var(--inner);
 }
 .gcol:last-child { border-right: none; }
@@ -78,8 +80,11 @@ html, body {
   cursor: pointer;
   transition: opacity 0.15s;
 }
-/* letzte Kachel jeder Spalte: kein border-bottom — footer border-top übernimmt */
-.gcol > .gc:last-child { border-bottom: none; }
+/* letzte Kachel jeder Spalte: füllt verbleibende Spaltenhöhe, kein border-bottom */
+.gcol > .gc:last-child {
+  flex: 1;
+  border-bottom: none;
+}
 .gc:hover { opacity: 0.85; }
 
 .gc-inner { padding: var(--gap); }
