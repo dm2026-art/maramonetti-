@@ -116,6 +116,16 @@ function newsletter() {
   }
 }
 
+function equalizeColumns() {
+  var cols = Array.from(document.querySelectorAll('.gcol'));
+  if (!cols.length) return;
+  cols.forEach(function(c) { c.style.height = ''; });
+  var maxH = cols.reduce(function(m, c) { return Math.max(m, c.offsetHeight); }, 0);
+  if (maxH > 0) cols.forEach(function(c) { c.style.height = maxH + 'px'; });
+}
+window.addEventListener('load', equalizeColumns);
+window.addEventListener('resize', equalizeColumns);
+
 document.addEventListener('keydown', function(e) {
   var pd = document.getElementById('pd');
   if (pd.classList.contains('open')) {
