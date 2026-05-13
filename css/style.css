@@ -65,7 +65,6 @@ html, body {
 /* ─── GALLERY — echte 3-Spalten Masonry ─── */
 .gallery {
   display: flex;
-  align-items: flex-start;
 }
 .gcol {
   flex: 1;
