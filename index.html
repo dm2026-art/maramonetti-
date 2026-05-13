@@ -26,13 +26,31 @@
 
     <!-- ══ GALLERY VIEW ══ -->
     <div id="view-gallery">
+
+      <!-- PROJEKT-DETAIL (im Raster, kein Popup) -->
+      <div id="pd">
+        <div id="pd-inner">
+          <div id="pd-img-wrap">
+            <img id="pd-img" src="" alt="">
+            <button class="pd-arr pd-arr-l" onclick="prevPd()" aria-label="Vorheriges Projekt">‹</button>
+            <button class="pd-arr pd-arr-r" onclick="nextPd()" aria-label="Nächstes Projekt">›</button>
+          </div>
+          <div id="pd-info">
+            <button class="pd-x" onclick="closePd()" aria-label="Schließen">✕</button>
+            <div id="pd-title"></div>
+            <div id="pd-desc"></div>
+            <div id="pd-client"></div>
+            <div id="pd-num"></div>
+          </div>
+        </div>
+      </div>
+
       <div class="gallery">
 
         <!-- Spalte 1: 3:2 -->
-        <div class="gc" onclick="openLb(0)">
+        <div class="gc" onclick="openPd(0)">
           <div class="gc-inner">
             <div class="gc-img ratio-3-2">
-              <!-- BILD ERSETZEN: src="images/projekt-01.jpg" -->
               <img src="images/projekt-01.jpg" alt="Titel der Arbeit" loading="eager">
             </div>
             <div class="gc-meta">
@@ -43,7 +61,7 @@
         </div>
 
         <!-- Spalte 2: 2:3 -->
-        <div class="gc" onclick="openLb(1)">
+        <div class="gc" onclick="openPd(1)">
           <div class="gc-inner">
             <div class="gc-img ratio-2-3">
               <img src="images/projekt-02.jpg" alt="Titel der Arbeit" loading="lazy">
@@ -56,7 +74,7 @@
         </div>
 
         <!-- Spalte 3: 4:5 -->
-        <div class="gc no-right" onclick="openLb(2)">
+        <div class="gc no-right" onclick="openPd(2)">
           <div class="gc-inner">
             <div class="gc-img ratio-4-5">
               <img src="images/projekt-03.jpg" alt="Titel der Arbeit" loading="lazy">
@@ -69,7 +87,7 @@
         </div>
 
         <!-- Spalte 1: 16:9 -->
-        <div class="gc" onclick="openLb(3)">
+        <div class="gc" onclick="openPd(3)">
           <div class="gc-inner">
             <div class="gc-img ratio-16-9">
               <img src="images/projekt-04.jpg" alt="Titel der Arbeit" loading="lazy">
@@ -82,7 +100,7 @@
         </div>
 
         <!-- Spalte 2: 1:1 -->
-        <div class="gc" onclick="openLb(4)">
+        <div class="gc" onclick="openPd(4)">
           <div class="gc-inner">
             <div class="gc-img ratio-1-1">
               <img src="images/projekt-05.jpg" alt="Titel der Arbeit" loading="lazy">
@@ -95,7 +113,7 @@
         </div>
 
         <!-- Spalte 3: 3:2 -->
-        <div class="gc no-right" onclick="openLb(5)">
+        <div class="gc no-right" onclick="openPd(5)">
           <div class="gc-inner">
             <div class="gc-img ratio-3-2">
               <img src="images/projekt-06.jpg" alt="Titel der Arbeit" loading="lazy">
@@ -108,7 +126,7 @@
         </div>
 
         <!-- Spalte 1: 4:5 -->
-        <div class="gc" onclick="openLb(2)">
+        <div class="gc" onclick="openPd(2)">
           <div class="gc-inner">
             <div class="gc-img ratio-4-5">
               <img src="images/projekt-07.jpg" alt="Titel der Arbeit" loading="lazy">
@@ -121,7 +139,7 @@
         </div>
 
         <!-- Spalte 2: 3:2 -->
-        <div class="gc" onclick="openLb(0)">
+        <div class="gc" onclick="openPd(0)">
           <div class="gc-inner">
             <div class="gc-img ratio-3-2">
               <img src="images/projekt-08.jpg" alt="Titel der Arbeit" loading="lazy">
@@ -134,7 +152,7 @@
         </div>
 
         <!-- Spalte 3: 2:3 -->
-        <div class="gc no-right" onclick="openLb(1)">
+        <div class="gc no-right" onclick="openPd(1)">
           <div class="gc-inner">
             <div class="gc-img ratio-2-3">
               <img src="images/projekt-09.jpg" alt="Titel der Arbeit" loading="lazy">
@@ -259,23 +277,6 @@
   </footer>
 
 </div><!-- /site -->
-
-<!-- ══ LIGHTBOX ══ -->
-<div class="lb-overlay" id="lb-overlay">
-  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Projektansicht">
-    <button class="lb-x" onclick="closeLb()" aria-label="Schließen">✕</button>
-    <div class="lb-body">
-      <div class="lb-stage" id="lb-img"></div>
-      <button class="lb-arr lb-arr-l" onclick="prevLb()" aria-label="Vorheriges Bild">‹</button>
-      <button class="lb-arr lb-arr-r" onclick="nextLb()" aria-label="Nächstes Bild">›</button>
-    </div>
-    <div class="lb-info">
-      <div class="lb-cell" id="lb-title"></div>
-      <div class="lb-cell" id="lb-client"></div>
-      <div class="lb-cell" id="lb-num"></div>
-    </div>
-  </div>
-</div>
 
 <script src="js/main.js"></script>
 </body>

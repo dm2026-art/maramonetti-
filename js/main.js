@@ -52,38 +52,40 @@ var projects = [
 
 var currentIdx = 0;
 
-function openLb(i) {
+function openPd(i) {
   currentIdx = i;
-  renderLb();
-  document.getElementById('lb-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  renderPd();
+  var pd = document.getElementById('pd');
+  pd.classList.add('open');
+  pd.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function closeLb() {
-  document.getElementById('lb-overlay').classList.remove('open');
-  document.body.style.overflow = '';
+function closePd() {
+  document.getElementById('pd').classList.remove('open');
 }
 
-function prevLb() {
+function prevPd() {
   currentIdx = (currentIdx - 1 + projects.length) % projects.length;
-  renderLb();
+  renderPd();
 }
 
-function nextLb() {
+function nextPd() {
   currentIdx = (currentIdx + 1) % projects.length;
-  renderLb();
+  renderPd();
 }
 
-function renderLb() {
+function renderPd() {
   var p = projects[currentIdx];
-  document.getElementById('lb-img').innerHTML =
-    '<img src="' + p.img + '" alt="' + p.title + '" style="max-width:100%;max-height:100%;display:block;object-fit:contain;">';
-  document.getElementById('lb-title').innerHTML =
-    '<strong>' + p.title + '</strong>' + p.desc;
-  document.getElementById('lb-client').innerHTML =
+  var img = document.getElementById('pd-img');
+  img.src = p.img;
+  img.alt = p.title;
+
+  document.getElementById('pd-title').innerHTML = p.title;
+  document.getElementById('pd-desc').innerHTML = p.desc;
+  document.getElementById('pd-client').innerHTML =
     (p.client ? '<strong>Client</strong>' + p.client : '') +
-    (p.url ? '<br><a href="' + p.url + '" target="_blank" rel="noopener">' + p.url + '</a>' : '');
-  document.getElementById('lb-num').innerHTML = p.num;
+    (p.url ? ' — <a href="' + p.url + '" target="_blank" rel="noopener">' + p.url + '</a>' : '');
+  document.getElementById('pd-num').innerHTML = p.num;
 }
 
 function showView(name) {
@@ -111,17 +113,11 @@ function newsletter() {
   }
 }
 
-// Keyboard navigation
-document.getElementById('lb-overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeLb();
-});
-
 document.addEventListener('keydown', function(e) {
-  var overlay = document.getElementById('lb-overlay');
-  if (overlay.classList.contains('open')) {
-    if (e.key === 'ArrowLeft')  prevLb();
-    if (e.key === 'ArrowRight') nextLb();
-    if (e.key === 'Escape')     closeLb();
+  var pd = document.getElementById('pd');
+  if (pd.classList.contains('open')) {
+    if (e.key === 'ArrowLeft')  prevPd();
+    if (e.key === 'ArrowRight') nextPd();
+    if (e.key === 'Escape')     closePd();
   }
 });
-
