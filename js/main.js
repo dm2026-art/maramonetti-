@@ -80,11 +80,14 @@ function renderPd() {
   img.src = p.img;
   img.alt = p.title;
 
-  document.getElementById('pd-title').innerHTML = p.title;
-  document.getElementById('pd-desc').innerHTML = p.desc;
-  document.getElementById('pd-client').innerHTML =
-    (p.client ? '<strong>Client</strong>' + p.client : '') +
-    (p.url ? ' — <a href="' + p.url + '" target="_blank" rel="noopener">' + p.url + '</a>' : '');
+  var sub = '';
+  if (p.desc) sub += p.desc;
+  if (p.client) sub += (sub ? ' — ' : '') + p.client;
+  if (p.url) sub += ' — <a href="' + p.url + '" target="_blank" rel="noopener">' + p.url + '</a>';
+
+  document.getElementById('pd-main').innerHTML =
+    '<div id="pd-title">' + p.title + '</div>' +
+    (sub ? '<div id="pd-sub">' + sub + '</div>' : '');
   document.getElementById('pd-num').innerHTML = p.num;
 }
 
