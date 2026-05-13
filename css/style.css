@@ -62,20 +62,25 @@ html, body {
 /* ─── MAIN WRAP ─── */
 .main-wrap { flex: 1; }
 
-/* ─── GALLERY — 3-column grid ─── */
+/* ─── GALLERY — echte 3-Spalten Masonry ─── */
 .gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  align-items: flex-start;
 }
+.gcol {
+  flex: 1;
+  border-right: var(--inner);
+}
+.gcol:last-child { border-right: none; }
+
 .gc {
   display: block;
-  border-right: var(--inner);
   border-bottom: var(--inner);
   cursor: pointer;
   transition: opacity 0.15s;
 }
-/* Kacheln in Spalte 3: kein border-right (site-border ist die rechte Kante) */
-.gc:nth-child(3n) { border-right: none; }
+/* letzte Kachel jeder Spalte: kein border-bottom — footer border-top übernimmt */
+.gcol > .gc:last-child { border-bottom: none; }
 .gc:hover { opacity: 0.85; }
 
 .gc-inner { padding: var(--gap); }
@@ -112,9 +117,7 @@ html, body {
 }
 
 /* ─── PAGES ─── */
-/* kein border-top: header-border-bottom ist die Trennlinie oben */
-/* border-bottom: Trennlinie vor dem Footer */
-.page { display: none; border-bottom: var(--inner); }
+.page { display: none; }
 .page.open { display: block; }
 
 .page-2col { display: grid; grid-template-columns: 1fr 1fr; }
@@ -177,10 +180,10 @@ html, body {
 .p-full h2:first-child { margin-top: 0; }
 
 /* ─── FOOTER ─── */
-/* kein border-top: gallery-tile-border-bottom bzw. page-border-bottom sind die Trennlinie */
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  border-top: var(--inner);
   flex-shrink: 0;
 }
 .fcol {
@@ -375,8 +378,10 @@ html, body {
   .hdr-name { padding: 16px 0 14px 16px; font-size: 20px; }
   .hdr-lang { padding: 20px 16px 14px 0; grid-column: 2; }
 
-  .gallery { grid-template-columns: 1fr; }
-  .gc, .gc:nth-child(3n) { border-right: none; }
+  .gallery { flex-direction: column; }
+  .gcol { border-right: none; }
+  /* zwischen Spalten auf Mobile: letzte Kachel jeder Spalte bekommt border-bottom zurück */
+  .gcol:not(:last-child) > .gc:last-child { border-bottom: var(--inner); }
   .gc-inner { padding: 16px; }
 
   #pd-img { max-height: 60vw; }
