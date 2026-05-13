@@ -1,0 +1,29 @@
+Title: Titel der Arbeit
+
+----
+
+Description: Donec pede justo, fringilla vel, aliquet nec.
+
+----
+
+Client: Editorial
+
+----
+
+Clienturl:
+
+----
+
+Column: 2
+
+----
+
+Ratio: ratio-2-1
+
+----
+
+Thumbimage: projekt-08.jpg
+
+----
+
+Largeimage: projekt-03-gross.jpg

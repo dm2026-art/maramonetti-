@@ -1,5 +1,5 @@
-// ── Projekte — hier echte Bilder und Texte eintragen ──
-var projects = [
+// Kirby setzt window.projects vor diesem Script — Fallback für statischen Betrieb
+var projects = window.projects || [
   {
     title: 'Titel der Arbeit',
     desc: 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.',
@@ -115,6 +115,38 @@ function newsletter() {
     inp.value = '';
   }
 }
+
+function fillLastTiles() {
+  var cols = Array.from(document.querySelectorAll('.gcol'));
+  if (!cols.length) return;
+
+  // reset any previous explicit heights
+  cols.forEach(function(col) {
+    var img = col.querySelector('.gc:last-child .gc-img');
+    if (img) img.style.height = '';
+  });
+
+  var maxH = cols.reduce(function(m, c) { return Math.max(m, c.offsetHeight); }, 0);
+
+  cols.forEach(function(col) {
+    var tiles = Array.from(col.querySelectorAll('.gc'));
+    var last  = tiles[tiles.length - 1];
+    var gcImg = last.querySelector('.gc-img');
+    var gcMeta = last.querySelector('.gc-meta');
+    if (!gcImg) return;
+
+    var fixedH = 0;
+    for (var i = 0; i < tiles.length - 1; i++) fixedH += tiles[i].offsetHeight + 1;
+
+    var metaH   = gcMeta ? gcMeta.offsetHeight + 14 : 50;
+    var imgH    = maxH - fixedH - 30 - 30 - metaH; // 30+30 = gc-inner top+bottom padding
+
+    if (imgH > 40) gcImg.style.height = imgH + 'px';
+  });
+}
+
+window.addEventListener('load', fillLastTiles);
+window.addEventListener('resize', fillLastTiles);
 
 document.addEventListener('keydown', function(e) {
   var pd = document.getElementById('pd');

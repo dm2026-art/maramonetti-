@@ -1,0 +1,64 @@
+title: Projekt
+icon: image
+num: num
+
+columns:
+  left:
+    width: 2/3
+    fields:
+      title:
+        label: Titel
+        type: text
+        required: true
+
+      description:
+        label: Beschreibung
+        type: textarea
+
+      client:
+        label: Kunde / Auftraggeber
+        type: text
+
+      clienturl:
+        label: URL des Kunden
+        type: url
+
+  right:
+    width: 1/3
+    fields:
+      column:
+        label: Spalte
+        type: select
+        default: "1"
+        options:
+          "1": Spalte 1
+          "2": Spalte 2
+          "3": Spalte 3
+
+      ratio:
+        label: Bildformat (Galerie)
+        type: select
+        default: ratio-4-3
+        options:
+          ratio-1-1: "1:1 — Quadrat"
+          ratio-2-1: "2:1 — Querformat breit"
+          ratio-1-2: "1:2 — Hochformat schmal"
+          ratio-3-4: "3:4 — Hochformat"
+          ratio-4-3: "4:3 — Querformat"
+
+      thumbimage:
+        label: Vorschaubild (Dateiname in /images/)
+        type: text
+        help: Platzhalter-Fallback, z.B. projekt-02.jpg
+
+      largeimage:
+        label: Detailbild (Dateiname in /images/)
+        type: text
+        help: Platzhalter-Fallback, z.B. projekt-02-gross.jpg
+
+sections:
+  images:
+    type: files
+    label: Bilder (hochladen für Live-Betrieb)
+    layout: cards
+    info: "{{ file.template }}"

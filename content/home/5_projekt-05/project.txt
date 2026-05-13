@@ -1,0 +1,29 @@
+Title: Titel der Arbeit
+
+----
+
+Description: Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a.
+
+----
+
+Client: Horizont Magazin
+
+----
+
+Clienturl: https://www.horizont.net
+
+----
+
+Column: 2
+
+----
+
+Ratio: ratio-3-4
+
+----
+
+Thumbimage: projekt-06.jpg
+
+----
+
+Largeimage: projekt-06-gross.jpg

@@ -1,0 +1,7 @@
+title: Datenschutz
+icon: text
+
+fields:
+  text:
+    label: Datenschutzerklärung
+    type: textarea

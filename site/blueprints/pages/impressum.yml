@@ -1,0 +1,7 @@
+title: Impressum
+icon: text
+
+fields:
+  text:
+    label: Impressum
+    type: textarea

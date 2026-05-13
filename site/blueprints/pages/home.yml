@@ -1,0 +1,13 @@
+title: Galerie
+icon: home
+num: 0
+
+sections:
+  projects:
+    type: pages
+    label: Projekte
+    templates:
+      - project
+    sortBy: num asc
+    create: project
+    info: "{{ page.ratio }} · Spalte {{ page.column }}"

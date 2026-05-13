@@ -1,0 +1,24 @@
+title: About
+icon: account
+
+fields:
+  abouttext:
+    label: Über mich
+    type: textarea
+
+  cvtext:
+    label: Lebenslauf (CV)
+    type: textarea
+    help: "Eine Zeile pro Eintrag, z.B. 2000–2010 Name der Institution"
+
+  clients:
+    label: Kunden & Partner
+    type: textarea
+    help: Einen Kunden pro Zeile
+
+sections:
+  photo:
+    type: files
+    label: Portraitfoto
+    max: 1
+    layout: cards
