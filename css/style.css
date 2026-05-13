@@ -226,18 +226,19 @@ html, body {
 
 /* Col 2 */
 .fbox {
-  padding: 18px 60px 18px var(--gap);
+  flex: 1;
+  padding: 0 60px 0 var(--gap);
   font-size: clamp(16px, 1.5vw, 24px);
   font-family: var(--f);
   cursor: pointer;
-  display: block;
+  display: flex;
+  align-items: center;
   color: #111;
   text-decoration: none;
   line-height: 1;
   transition: color 0.15s;
   background: #fff;
 }
-.fbox:first-child { padding-top: 32px; }
 .fbox:hover { color: #888; }
 
 /* Col 3 newsletter */
