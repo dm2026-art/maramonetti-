@@ -62,19 +62,20 @@ html, body {
 /* ─── MAIN WRAP ─── */
 .main-wrap { flex: 1; }
 
-/* ─── GALLERY — column masonry ─── */
+/* ─── GALLERY — 3-column grid ─── */
 .gallery {
-  column-count: 3;
-  column-gap: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .gc {
-  break-inside: avoid;
   display: block;
   border-right: var(--inner);
   border-bottom: var(--inner);
   cursor: pointer;
   transition: opacity 0.15s;
 }
+/* Kacheln in Spalte 3: kein border-right (site-border ist die rechte Kante) */
+.gc:nth-child(3n) { border-right: none; }
 .gc:hover { opacity: 0.85; }
 
 .gc-inner { padding: var(--gap); }
@@ -111,7 +112,9 @@ html, body {
 }
 
 /* ─── PAGES ─── */
-.page { display: none; border-top: var(--inner); }
+/* kein border-top: header-border-bottom ist die Trennlinie oben */
+/* border-bottom: Trennlinie vor dem Footer */
+.page { display: none; border-bottom: var(--inner); }
 .page.open { display: block; }
 
 .page-2col { display: grid; grid-template-columns: 1fr 1fr; }
@@ -174,16 +177,16 @@ html, body {
 .p-full h2:first-child { margin-top: 0; }
 
 /* ─── FOOTER ─── */
+/* kein border-top: gallery-tile-border-bottom bzw. page-border-bottom sind die Trennlinie */
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  border-top: 0.5px solid #111;
   flex-shrink: 0;
 }
 .fcol {
   display: flex;
   flex-direction: column;
-  border-right: 0.5px solid #111;
+  border-right: var(--inner);
 }
 .fcol:last-child { border-right: none; }
 
@@ -372,20 +375,20 @@ html, body {
   .hdr-name { padding: 16px 0 14px 16px; font-size: 20px; }
   .hdr-lang { padding: 20px 16px 14px 0; grid-column: 2; }
 
-  .gallery { column-count: 1; }
-  .gc, .gc.no-right { border-right: none; }
+  .gallery { grid-template-columns: 1fr; }
+  .gc, .gc:nth-child(3n) { border-right: none; }
   .gc-inner { padding: 16px; }
 
   #pd-img { max-height: 60vw; }
   #pd-info { flex-wrap: wrap; gap: 12px; }
 
   .footer { grid-template-columns: 1fr; }
-  .fcol { border-right: none; border-bottom: 0.5px solid #111; }
+  .fcol { border-right: none; border-bottom: var(--inner); }
   .fcol:last-child { border-bottom: none; }
   .fc1 { padding: 20px; }
   .fbox { padding: 14px 20px; }
   .fc3 { padding: 20px; }
 
   .page-2col { grid-template-columns: 1fr; }
-  .pcol { padding: 20px; border-right: none; border-bottom: 0.5px solid #111; }
+  .pcol { padding: 20px; border-right: none; border-bottom: var(--inner); }
 }
