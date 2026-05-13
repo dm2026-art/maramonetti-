@@ -1,5 +1,5 @@
-// ── Projekte — hier echte Bilder und Texte eintragen ──
-var projects = [
+// Kirby setzt window.projects vor diesem Script — Fallback für statischen Betrieb
+var projects = window.projects || [
   {
     title: 'Titel der Arbeit',
     desc: 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.',

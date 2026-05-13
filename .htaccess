@@ -1,0 +1,14 @@
+RewriteEngine on
+
+# Block dot-files except .well-known
+RewriteRule "(^|/)\.(?!well-known)" - [F]
+
+# Protect Kirby folders
+RewriteRule ^content/(.*)$  index.php [L]
+RewriteRule ^site/(.*)$     index.php [L]
+RewriteRule ^kirby/(.*)$    index.php [L]
+
+# Route everything else through Kirby
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*) index.php [L]
