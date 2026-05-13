@@ -82,30 +82,9 @@ html, body {
   cursor: pointer;
   transition: opacity 0.15s;
 }
-/* letzte Kachel: füllt Spalte, Bild füllt verfügbare Höhe */
-.gcol > .gc:last-child {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.gcol > .gc:last-child .gc-inner {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.gcol > .gc:last-child .gc-img {
-  position: relative;
-  flex: 1;
-  aspect-ratio: unset;
-  min-height: 60px;
-}
-.gcol > .gc:last-child .gc-img img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+/* letzte Kachel: JS setzt Bildhöhe explizit via fillLastTiles() */
+.gcol > .gc:last-child { flex: 1; }
+.gcol > .gc:last-child .gc-img { aspect-ratio: unset; }
 .gc:hover { opacity: 0.85; }
 
 .gc-inner { padding: var(--gap); }

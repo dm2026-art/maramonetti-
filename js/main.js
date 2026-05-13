@@ -116,15 +116,37 @@ function newsletter() {
   }
 }
 
-function equalizeColumns() {
+function fillLastTiles() {
   var cols = Array.from(document.querySelectorAll('.gcol'));
   if (!cols.length) return;
-  cols.forEach(function(c) { c.style.height = ''; });
+
+  // reset any previous explicit heights
+  cols.forEach(function(col) {
+    var img = col.querySelector('.gc:last-child .gc-img');
+    if (img) img.style.height = '';
+  });
+
   var maxH = cols.reduce(function(m, c) { return Math.max(m, c.offsetHeight); }, 0);
-  if (maxH > 0) cols.forEach(function(c) { c.style.height = maxH + 'px'; });
+
+  cols.forEach(function(col) {
+    var tiles = Array.from(col.querySelectorAll('.gc'));
+    var last  = tiles[tiles.length - 1];
+    var gcImg = last.querySelector('.gc-img');
+    var gcMeta = last.querySelector('.gc-meta');
+    if (!gcImg) return;
+
+    var fixedH = 0;
+    for (var i = 0; i < tiles.length - 1; i++) fixedH += tiles[i].offsetHeight + 1;
+
+    var metaH   = gcMeta ? gcMeta.offsetHeight + 14 : 50;
+    var imgH    = maxH - fixedH - 30 - 30 - metaH; // 30+30 = gc-inner top+bottom padding
+
+    if (imgH > 40) gcImg.style.height = imgH + 'px';
+  });
 }
-window.addEventListener('load', equalizeColumns);
-window.addEventListener('resize', equalizeColumns);
+
+window.addEventListener('load', fillLastTiles);
+window.addEventListener('resize', fillLastTiles);
 
 document.addEventListener('keydown', function(e) {
   var pd = document.getElementById('pd');
