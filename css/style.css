@@ -8,7 +8,7 @@
 :root {
   --f: 'Cosmica', 'Palatino Linotype', Palatino, Georgia, serif;
   --outer: 1px solid #111;
-  --inner: 0.5px solid #111;
+  --inner: 1px solid #111;
   --gap: 30px;
 }
 
@@ -70,7 +70,8 @@ html, body {
 .gc {
   break-inside: avoid;
   display: block;
-  border: var(--inner);
+  border-right: var(--inner);
+  border-bottom: var(--inner);
   cursor: pointer;
   transition: opacity 0.15s;
 }
