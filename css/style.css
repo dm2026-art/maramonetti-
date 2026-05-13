@@ -115,7 +115,7 @@ html, body {
 
 .page-2col { display: grid; grid-template-columns: 1fr 1fr; }
 .pcol {
-  padding: 60px;
+  padding: 60px 60px 60px var(--gap);
 }
 .pcol-no-border { border-right: none; }
 .pcol h2 {
@@ -156,7 +156,7 @@ html, body {
 }
 
 .p-full {
-  padding: 60px;
+  padding: 60px 60px 60px var(--gap);
   font-size: clamp(11px, 0.85vw, 13px);
   line-height: 1.85;
   color: #333;
@@ -187,7 +187,7 @@ html, body {
 .fcol:last-child { border-right: none; }
 
 /* Shared footer top padding — all titles start at same y */
-.fc1, .fc3 { padding: 32px 60px; }
+.fc1, .fc3 { padding: 32px 60px 32px var(--gap); }
 
 /* Col 1 label */
 .fc1 { display: flex; flex-direction: column; }
@@ -213,7 +213,7 @@ html, body {
 
 /* Col 2 — first fbox top padding matches col1/col3 padding */
 .fbox {
-  padding: 18px 60px;
+  padding: 18px 60px 18px var(--gap);
   border-bottom: var(--inner);
   font-size: clamp(16px, 1.5vw, 24px);
   font-family: var(--f);
@@ -225,7 +225,7 @@ html, body {
   transition: opacity 0.15s;
 }
 /* First fbox: top padding = 32px to align title with col1/col3 */
-.fbox:first-child { padding-top: 32px; padding-bottom: 18px; }
+.fbox:first-child { padding-top: 32px; padding-bottom: 18px; padding-left: var(--gap); }
 .fbox:last-child { border-bottom: none; }
 .fbox:hover { opacity: 0.6; }
 
