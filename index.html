@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mara Monetti Fotografie – Frankfurt am Main">
+  <title>Mara Monetti Fotografie</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══ SITE WRAPPER ══ -->
+<div class="site">
+
+  <!-- HEADER -->
+  <header class="hdr">
+    <div class="hdr-name" onclick="showView('gallery')">Mara Monetti<br>Fotografie</div>
+    <div class="hdr-lang">
+      <span class="active" onclick="setLang('de')">DE</span>
+      <span>/</span>
+      <span onclick="setLang('en')">EN</span>
+    </div>
+  </header>
+
+  <div class="main-wrap">
+
+    <!-- ══ GALLERY VIEW ══ -->
+    <div id="view-gallery">
+      <div class="gallery">
+
+        <!-- Spalte 1: 3:2 -->
+        <div class="gc" onclick="openLb(0)">
+          <div class="gc-inner">
+            <div class="gc-img ratio-3-2">
+              <!-- BILD ERSETZEN: src="images/projekt-01.jpg" -->
+              <img src="images/projekt-01.jpg" alt="Titel der Arbeit" loading="eager">
+            </div>
+            <div class="gc-meta">
+              <div class="gc-title">Titel der Arbeit,<br>knappe Beschreibung</div>
+              <div class="gc-num">1 / 20</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spalte 2: 2:3 -->
+        <div class="gc" onclick="openLb(1)">
+          <div class="gc-inner">
+            <div class="gc-img ratio-2-3">
+              <img src="images/projekt-02.jpg" alt="Titel der Arbeit" loading="lazy">
+            </div>
+            <div class="gc-meta">
+              <div class="gc-title">Titel der Arbeit,<br>knappe Beschreibung</div>
+              <div class="gc-num">1 / 20</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spalte 3: 4:5 -->
+        <div class="gc no-right" onclick="openLb(2)">
+          <div class="gc-inner">
+            <div class="gc-img ratio-4-5">
+              <img src="images/projekt-03.jpg" alt="Titel der Arbeit" loading="lazy">
+            </div>
+            <div class="gc-meta">
+              <div class="gc-title">Titel der Arbeit,<br>knappe Beschreibung</div>
+              <div class="gc-num">1 / 20</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spalte 1: 16:9 -->
+        <div class="gc" onclick="openLb(3)">
+          <div class="gc-inner">
+            <div class="gc-img ratio-16-9">
+              <img src="images/projekt-04.jpg" alt="Titel der Arbeit" loading="lazy">
+            </div>
+            <div class="gc-meta">
+              <div class="gc-title">Titel der Arbeit,<br>knappe Beschreibung</div>
+              <div class="gc-num">2 / 20</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spalte 2: 1:1 -->
+        <div class="gc" onclick="openLb(4)">
+          <div class="gc-inner">
+            <div class="gc-img ratio-1-1">
+              <img src="images/projekt-05.jpg" alt="Titel der Arbeit" loading="lazy">
+            </div>
+            <div class="gc-meta">
+              <div class="gc-title">Titel der Arbeit,<br>knappe Beschreibung</div>
+              <div class="gc-num">1 / 20</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spalte 3: 3:2 -->
+        <div class="gc no-right" onclick="openLb(5)">
+          <div class="gc-inner">
+            <div class="gc-img ratio-3-2">
+              <img src="images/projekt-06.jpg" alt="Titel der Arbeit" loading="lazy">
+            </div>
+            <div class="gc-meta">
+              <div class="gc-title">Titel der Arbeit,<br>knappe Beschreibung</div>
+              <div class="gc-num">3 / 20</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spalte 1: 4:5 -->
+        <div class="gc" onclick="openLb(2)">
+          <div class="gc-inner">
+            <div class="gc-img ratio-4-5">
+              <img src="images/projekt-07.jpg" alt="Titel der Arbeit" loading="lazy">
+            </div>
+            <div class="gc-meta">
+              <div class="gc-title">Titel der Arbeit,<br>knappe Beschreibung</div>
+              <div class="gc-num">4 / 20</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spalte 2: 3:2 -->
+        <div class="gc" onclick="openLb(0)">
+          <div class="gc-inner">
+            <div class="gc-img ratio-3-2">
+              <img src="images/projekt-08.jpg" alt="Titel der Arbeit" loading="lazy">
+            </div>
+            <div class="gc-meta">
+              <div class="gc-title">Titel der Arbeit,<br>knappe Beschreibung</div>
+              <div class="gc-num">5 / 20</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spalte 3: 2:3 -->
+        <div class="gc no-right" onclick="openLb(1)">
+          <div class="gc-inner">
+            <div class="gc-img ratio-2-3">
+              <img src="images/projekt-09.jpg" alt="Titel der Arbeit" loading="lazy">
+            </div>
+            <div class="gc-meta">
+              <div class="gc-title">Titel der Arbeit,<br>knappe Beschreibung</div>
+              <div class="gc-num">6 / 20</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /gallery -->
+    </div><!-- /view-gallery -->
+
+    <!-- ══ ABOUT PAGE ══ -->
+    <div id="view-about" class="page">
+      <div class="page-2col">
+        <div class="pcol">
+          <div class="p-photo">
+            <img src="images/mara-monetti.jpg" alt="Mara Monetti">
+          </div>
+          <h2>About</h2>
+          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p>
+          <p>Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+        </div>
+        <div class="pcol">
+          <h2>CV</h2>
+          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+          <ul>
+            <li>1985–1993 Lorem ipsum dolor sit amet</li>
+            <li>1993–2000 Lorem ipsum dolor sit amet</li>
+            <li>2000–2008 Lorem ipsum dolor sit amet</li>
+            <li>2008–2015 Lorem ipsum dolor sit amet</li>
+            <li>2015– Lorem ipsum dolor sit amet</li>
+          </ul>
+          <br>
+          <h2>Clients &amp; Partners</h2>
+          <div class="clients">
+            Adidas AG<br>Airbus SE<br>Allianz SE<br>Alphabet Inc. (Google)<br>
+            Amazon.com Inc.<br>Apple Inc.<br>BASF SE<br>Bayer AG<br>
+            Bayerische Motoren Werke AG (BMW)<br>Beiersdorf AG<br>Brenntag SE<br>
+            Commerzbank AG<br>Continental AG<br>Covestro AG<br>
+            Daimler Truck Holding AG<br>Deutsche Bank AG<br>Deutsche Börse AG<br>
+            Deutsche Post AG (DHL Group)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ IMPRESSUM ══ -->
+    <div id="view-impressum" class="page">
+      <div class="p-full">
+        <h2>Impressum</h2>
+        <p>Mara Monetti Fotografie<br>
+        Martin-May-Strasse 10<br>
+        60594 Frankfurt am Main<br>
+        Germany</p>
+        <p>E-Mail: <a href="mailto:info@maramonetti.de">info@maramonetti.de</a></p>
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+        <h2>Haftungsausschluss</h2>
+        <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+        <h2>Urheberrecht</h2>
+        <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+      </div>
+    </div>
+
+    <!-- ══ DATENSCHUTZ ══ -->
+    <div id="view-datenschutz" class="page">
+      <div class="p-full">
+        <h2>Datenschutzerklärung</h2>
+        <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+        <h2>Datenerhebung</h2>
+        <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+        <h2>Cookies</h2>
+        <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+        <h2>Analyse-Tools</h2>
+        <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut.</p>
+      </div>
+    </div>
+
+  </div><!-- /main-wrap -->
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="fcol">
+      <div class="fc1">
+        <div class="fc1-label">Contact</div>
+        <span class="fc1-br"></span>
+        <div class="fc1-addr">
+          Mara Monetti<br>
+          Fotografie<br>
+          <br>
+          Martin-May-Strasse 10<br>
+          60594 Frankfurt am Main<br>
+          Germany<br>
+          <br>
+          <a href="mailto:info@maramonetti.de">info@maramonetti.de</a>
+        </div>
+        <div class="fc1-copy">© Mara Monetti 2026</div>
+      </div>
+    </div>
+
+    <div class="fcol">
+      <span class="fbox" onclick="showView('about')">About</span>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" class="fbox">Instagram</a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="fbox">LinkedIn</a>
+      <span class="fbox" onclick="showView('impressum')">Impressum</span>
+      <span class="fbox" onclick="showView('datenschutz')">Datenschutz</span>
+    </div>
+
+    <div class="fcol">
+      <div class="fc3">
+        <div class="fc3-title">Newsletter</div>
+        <div class="fc3-desc">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</div>
+        <div class="nl-wrap">
+          <input type="email" placeholder="E-Mail-Adresse" aria-label="E-Mail-Adresse">
+          <button type="button" onclick="newsletter()">OK</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /site -->
+
+<!-- ══ LIGHTBOX ══ -->
+<div class="lb-overlay" id="lb-overlay">
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Projektansicht">
+    <button class="lb-x" onclick="closeLb()" aria-label="Schließen">✕</button>
+    <div class="lb-body">
+      <div class="lb-stage" id="lb-img"></div>
+      <button class="lb-arr lb-arr-l" onclick="prevLb()" aria-label="Vorheriges Bild">‹</button>
+      <button class="lb-arr lb-arr-r" onclick="nextLb()" aria-label="Nächstes Bild">›</button>
+    </div>
+    <div class="lb-info">
+      <div class="lb-cell" id="lb-title"></div>
+      <div class="lb-cell" id="lb-client"></div>
+      <div class="lb-cell" id="lb-num"></div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
