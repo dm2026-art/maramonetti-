@@ -29,18 +29,22 @@
 
       <!-- PROJEKT-DETAIL (im Raster, kein Popup) -->
       <div id="pd">
-        <div id="pd-inner">
-          <div id="pd-img-wrap">
-            <img id="pd-img" src="" alt="">
-            <button class="pd-arr pd-arr-l" onclick="prevPd()" aria-label="Vorheriges Projekt">‹</button>
-            <button class="pd-arr pd-arr-r" onclick="nextPd()" aria-label="Nächstes Projekt">›</button>
-          </div>
-          <div id="pd-info">
-            <button class="pd-x" onclick="closePd()" aria-label="Schließen">✕</button>
+        <div id="pd-img-wrap">
+          <img id="pd-img" src="" alt="">
+          <button class="pd-arr pd-arr-l" onclick="prevPd()" aria-label="Vorheriges Projekt">‹</button>
+          <button class="pd-arr pd-arr-r" onclick="nextPd()" aria-label="Nächstes Projekt">›</button>
+        </div>
+        <div id="pd-info">
+          <div class="pd-cell">
             <div id="pd-title"></div>
             <div id="pd-desc"></div>
+          </div>
+          <div class="pd-cell">
             <div id="pd-client"></div>
+          </div>
+          <div class="pd-cell pd-cell-last">
             <div id="pd-num"></div>
+            <button class="pd-x" onclick="closePd()" aria-label="Schließen">✕</button>
           </div>
         </div>
       </div>
