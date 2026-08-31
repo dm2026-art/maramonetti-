@@ -70,8 +70,7 @@ html, body {
 .gc {
   break-inside: avoid;
   display: block;
-  border-right: var(--inner);
-  border-bottom: var(--inner);
+  outline: 1px solid #111;
   cursor: pointer;
   transition: opacity 0.15s;
 }
@@ -177,13 +176,13 @@ html, body {
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  border-top: 0.5px solid #111;
+  border-top: 1px solid #111;
   flex-shrink: 0;
 }
 .fcol {
   display: flex;
   flex-direction: column;
-  border-right: 0.5px solid #111;
+  border-right: 1px solid #111;
 }
 .fcol:last-child { border-right: none; }
 
@@ -215,7 +214,7 @@ html, body {
 /* Col 2 — first fbox top padding matches col1/col3 padding */
 .fbox {
   padding: 18px 60px 18px var(--gap);
-  border-bottom: var(--inner);
+  border-bottom: 1px solid #111;
   font-size: clamp(16px, 1.5vw, 24px);
   font-family: var(--f);
   cursor: pointer;
@@ -248,7 +247,7 @@ html, body {
 .nl-wrap {
   display: flex;
   align-items: center;
-  border-bottom: var(--inner);
+  border-bottom: 1px solid #111;
   padding-bottom: 4px;
   max-width: 480px;
 }
@@ -274,7 +273,7 @@ html, body {
 /* ─── PROJEKT-DETAIL (im Raster) ─── */
 #pd {
   display: none;
-  border-bottom: var(--inner);
+  border-bottom: 1px solid #111;
 }
 #pd.open { display: block; }
 
@@ -314,7 +313,7 @@ html, body {
 #pd-info {
   display: flex;
   align-items: center;
-  border-top: var(--inner);
+  border-top: 1px solid #111;
 }
 .pd-cell {
   flex: 1;
@@ -329,7 +328,7 @@ html, body {
   align-items: center;
   gap: 24px;
   padding: 14px 30px;
-  border-left: var(--inner);
+  border-left: 1px solid #111;
 }
 
 #pd-title {
@@ -373,19 +372,18 @@ html, body {
   .hdr-lang { padding: 20px 16px 14px 0; grid-column: 2; }
 
   .gallery { column-count: 1; }
-  .gc, .gc.no-right { border-right: none; }
   .gc-inner { padding: 16px; }
 
   #pd-img { max-height: 60vw; }
   #pd-info { flex-wrap: wrap; gap: 12px; }
 
   .footer { grid-template-columns: 1fr; }
-  .fcol { border-right: none; border-bottom: 0.5px solid #111; }
+  .fcol { border-right: none; border-bottom: 1px solid #111; }
   .fcol:last-child { border-bottom: none; }
   .fc1 { padding: 20px; }
   .fbox { padding: 14px 20px; }
   .fc3 { padding: 20px; }
 
   .page-2col { grid-template-columns: 1fr; }
-  .pcol { padding: 20px; border-right: none; border-bottom: 0.5px solid #111; }
+  .pcol { padding: 20px; border-right: none; border-bottom: 1px solid #111; }
 }
